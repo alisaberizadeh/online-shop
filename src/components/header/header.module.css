@@ -1,0 +1,66 @@
+.searchBox input {
+  width: 81%;
+  height: 100%;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  background: none;
+  padding-right: 15px;
+}
+.searchBox button {
+  width: 13%;
+  height: 100%;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  color: rgb(178, 178, 178);
+}
+.header__btn:hover {
+  background-color: #eeeeee;
+}
+.menu a {
+  color: var(--textColor);
+  padding: 15px 20px;
+  font-size: 14px;
+  position: relative;
+  display: flex;
+  transition: none;
+  align-items: center;
+}
+.menu a:hover {
+  color: var(--baseColor);
+}
+
+@media screen and (max-width: 600px) {
+  /* XS */
+
+  .menu a {
+    padding: 10px 40px 10px 20px;
+    font-size: 13px;
+  }
+  .menu .categoryLink{
+    display: block;
+  }
+
+}
+
+@media screen and (min-width: 600px) {
+    .menu .categoryLink{
+        display: block;
+      }
+    
+}
+
+@media screen and (min-width: 900px) {
+  /* MD */
+}
+
+@media screen and (min-width: 1200px) {
+  /* LG */
+}

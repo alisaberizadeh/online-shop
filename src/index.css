@@ -1,0 +1,21 @@
+:root{
+  --baseColor :#00c85d;
+  --textColor :rgb(102 102 102);
+}
+body {
+  background-color: #f9f7fc ;
+}
+a{
+  text-decoration: none;
+}
+*{
+  margin: 0px;
+  padding: 0px;
+  transition: all .3s ease-in-out;
+  font-family: 'MyFont';
+  direction: rtl;
+}
+@font-face {
+  font-family: 'MyFont';
+  src: url('./assets/fonts/iransans.ttf') format('truetype');
+}
