@@ -9,9 +9,9 @@ export default function Product(props) {
     const [btnStatus , setBtnStatus] = useState(false)
 
   return(
-        <Box onMouseEnter={()=>setBtnStatus(true)} onMouseLeave={()=> setBtnStatus(false)} width="100%" overflow="hidden" bgcolor="white" m="0 auto" borderRadius="20px" height="auto" textAlign="center" p="10px 0" position="relative">
+        <Box className={css.product} onMouseEnter={()=>setBtnStatus(true)} onMouseLeave={()=> setBtnStatus(false)} width="100%" overflow="hidden" bgcolor="white" m="0 auto" borderRadius={props.radius} height="auto" textAlign="center" p="10px 0" position="relative">
             <Link to="SINGLE">
-                <Box component="img" alt="test" src={props.image} width="90%" borderRadius="20px" />
+                <Box component="img" alt="test" src={props.image} width="90%" borderRadius="30px" />
                 <Typography component="p" color="black" p="0 10px" variant="p" fontSize="13px" textAlign="right" lineHeight="30px">
                     {props.title}
                 </Typography>
@@ -22,7 +22,7 @@ export default function Product(props) {
                     1,300,000 تومان
                 </Typography>
 
-                <Box position="absolute" p="0 10px" display={btnStatus ? "block" : "block"} className={css.btns} left={btnStatus ? "0" : "-40%"} top="0">
+                <Box position="absolute" p="0 10px" className={css.btns} left={{xs:"0",md:btnStatus ? "0" : "-40%"}} top="0">
                     <Link><ci.CiHeart /></Link>
                     <Link><ci.CiShoppingCart /></Link>
                 </Box>
