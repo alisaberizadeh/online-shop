@@ -10,22 +10,33 @@ import Banners from "../../components/banners/Banners";
 import NewProducts from "../../components/newProducts/NewProducts";
 import Poster from "../../components/posters/Poster";
 import BestSellers from "../../components/bestSellers/BestSellers";
-
+import BlogHome from "../../components/blogHome/BlogHome";
+import FeaturesFooter from "../../components/featuresFooter/FeaturesFooter";
+ 
 export default function Home() {
   return (
     <>
       <Header active="home" />
+      
       <Slider />
+
       <Container maxWidth="lg">
          <Categories />
       </Container>
+
       <GoldenOffers />
+
       <Container maxWidth="lg">
+
           <Banners />
           <NewProducts />
           <Poster />
           <BestSellers />
+          <BlogHome />
+           
       </Container>
+
+      <FeaturesFooter />
 
       <br />
       <br />
