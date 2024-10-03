@@ -36,6 +36,14 @@
 .menu a:hover {
   color: var(--baseColor);
 }
+.subMenuUser a{
+  display: block;
+  padding: 5px 10px;
+  color: var(--textColor);
+}
+.subMenuUser a:hover{
+ background-color: rgba(242, 242, 242, 0.637);
+}
 
 @media screen and (max-width: 600px) {
   /* XS */

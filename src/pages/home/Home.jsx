@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import css from "./home.module.css";
 import * as IconMui from "@mui/icons-material";
 import { Container } from "@mui/material";
@@ -11,9 +11,11 @@ import NewProducts from "../../components/newProducts/NewProducts";
 import Poster from "../../components/posters/Poster";
 import BestSellers from "../../components/bestSellers/BestSellers";
 import BlogHome from "../../components/blogHome/BlogHome";
-import FeaturesFooter from "../../components/featuresFooter/FeaturesFooter";
+ import Footer from "../../components/footer/Footer";
+import { useEffect } from "react";
  
 export default function Home() {
+
   return (
     <>
       <Header active="home" />
@@ -27,25 +29,15 @@ export default function Home() {
       <GoldenOffers />
 
       <Container maxWidth="lg">
-
           <Banners />
           <NewProducts />
           <Poster />
           <BestSellers />
           <BlogHome />
-           
       </Container>
 
-      <FeaturesFooter />
+       <Footer />
 
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
     </>
   );
 }

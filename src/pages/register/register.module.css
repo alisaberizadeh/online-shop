@@ -19,6 +19,4 @@
     background: var(--baseColor);
     color: white;
 }
-.input button:hover{
-   background: rgb(66, 3, 165);
-}
+ 

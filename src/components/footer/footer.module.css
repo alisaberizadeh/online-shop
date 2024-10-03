@@ -1,0 +1,34 @@
+ .searchBox input {
+  width: 70%;
+  height: 100%;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  background: none;
+  font-size: 14px;
+  padding-right: 15px;
+}
+.searchBox button {
+  width: 20%;
+  height: 100%;
+  outline: none;
+  border: none;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  cursor: pointer;
+  background: var(--baseColor);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: white;
+}
+.title::before{
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: #00c85d;
+  border-radius: 100px;
+  margin-left: 10px;
+}
+ 

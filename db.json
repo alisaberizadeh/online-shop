@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "علی صابری",
+      "email": "admin@gmail.com",
+      "mobile": "09104043703",
+      "password": "11111111",
+      "date": "2024-10-01",
+      "type": 1
+    },
+    {
+      "id": 2,
+      "name": "Tate Sullivan",
+      "email": "nylulodesa@mailinator.com",
+      "mobile": "09354029510",
+      "password": "Pa$$w0rd!",
+      "date": "2024-10-03",
+      "type": 2
+    }
+  ]
+}

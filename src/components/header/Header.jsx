@@ -1,17 +1,22 @@
 import { Box, Container  } from "@mui/material";
-import React, {useState } from "react";
+import React, {useContext, useState } from "react";
 import css from "./header.module.css";
 import * as ci from "react-icons/ci";
 import * as IconMui from "@mui/icons-material";
 import { Link } from "react-router-dom";
 import logo from "../../assets/images/logo.png"
-
+import { AuthProviderContext } from "../../providers/AuthProvider";
+ 
 export default function Header(props) {
+
+    
 
     const [categorySubMenu , setCategorySubMenu] = useState(false)
     const [statusMenu , setStatusMenu] = useState(false)
     const [bgMenu , setBgMenu] = useState(false)
-
+    const [subMenuUser , setSubMenuUser] = useState(false)
+    const { user,logout } = useContext(AuthProviderContext)
+    
     let subopenMenu = ()=> {
         setCategorySubMenu(!categorySubMenu)
     }
@@ -38,16 +43,18 @@ export default function Header(props) {
   };
 
 
+ 
+
 
   return (
     <>
     <Box width="100%"  height="auto" bgcolor="white">
-      <Container>
+       <Container>
 
         <Box width="100%" p={{xs:"0",md:"10px 0"}}  height="100px" display="flex" justifyContent="space-between">
 
             <Box width={{xs:"40%",sm:"27%",md:"20%"}} height="100%" display="flex" justifyContent="center" alignItems="center">
-                <Link>
+                <Link to="/">
                     <Box
                         component="img"
                         src={logo}
@@ -76,14 +83,35 @@ export default function Header(props) {
                          <ci.CiHeart />
                     </Box>
                 </Link>
-                <Link>
-                    <Box className={css.header__btn} m={{xs:"0 10px 0 0",md:"0 20px 0 0"}}  width={{xs:"40px",md:"50px"}} height={{xs:"40px",md:"50px"}}  position="relative" color="rgb(108 106 106)" borderRadius="10px" fontSize={{xs:"20px",md:"25px"}}  bgcolor="#f8f9fa"  display="flex" justifyContent="center" alignItems="center">
+
+                
+                {!user && (
+                    <Link to="/auth/register">
+                    <Box className={css.header__btn} m={{xs:"0 10px 0 0",md:"0 20px 0 0"}}  width={{xs:"40px",md:"50px"}} height={{xs:"40px",md:"50px"}}  position="relative" color={user ? "#0037ff" : "rgb(108 106 106)"} borderRadius="10px" fontSize={{xs:"20px",md:"25px"}}  bgcolor="#f8f9fa"  display="flex" justifyContent="center" alignItems="center">
                          <ci.CiUser />
-                    </Box>
+                     </Box>
                 </Link>
+                )}
+                {user && (
+                    <Link to="#" onClick={()=> setSubMenuUser(!subMenuUser)}>
+                    <Box className={css.header__btn} m={{xs:"0 10px 0 0",md:"0 20px 0 0"}}  width={{xs:"40px",md:"50px"}} height={{xs:"40px",md:"50px"}}  position="relative" color={user ? "#0037ff" : "rgb(108 106 106)"} borderRadius="10px" fontSize={{xs:"20px",md:"25px"}}  bgcolor="#f8f9fa"  display="flex" justifyContent="center" alignItems="center">
+                         <ci.CiUser />
+                         <Box  position="absolute"  top="-5px" p="0 5px" right="0" fontSize="10px" display={user ? "flex" : "none"} alignItems="center" justifyContent="center" bgcolor="#0037ff" color="white" borderRadius="100px">آنلاین</Box>
+                            <Box display={subMenuUser ? "block" : "none"} className={css.subMenuUser} width="150px" left="0" boxShadow="0px 2px 6px 0px rgba(51.00000000000001, 73.00000000000001, 94, 0.1)" p="10px 0" borderRadius="10px" zIndex="100" bgcolor="white" position="absolute" top="100%" fontSize="13px">
+                            <Link to={ user.type === 1 ? "/dashboard" : "/auth/my"}>پنل {user.name} </Link>
+                            <Link>سفارشات</Link>
+                            <Link onClick={logout} style={{color:"red"}}>خروج</Link>
+                         </Box>
+                     </Box>
+                </Link>
+                )}
+
+
+
                 <Link>
                     <Box onClick={openMenu} className={css.header__btn} m={{xs:"0 10px 0 0",md:"0 20px 0 0"}}  width={{xs:"40px",md:"50px"}} height={{xs:"40px",md:"50px"}} color="rgb(108 106 106)" borderRadius="10px" fontSize={{xs:"20px",md:"25px"}}  bgcolor="#f8f9fa"  display={{xs:"flex",md:"none"}} justifyContent="center" alignItems="center">
                          <ci.CiMenuFries  />
+                         
                     </Box>
                 </Link>
             </Box>
@@ -101,7 +129,7 @@ export default function Header(props) {
                         m="0 auto 30px"
                         p="0"
                     />
-                <Link style={{color:props.active=="home" ? "#00c85d" : "rgb(102 102 102)"}}>خانه</Link>
+                <Link style={{color:props.active==="home" ? "#00c85d" : "rgb(102 102 102)"}}>خانه</Link>
                 <Link>فروشگاه</Link>
                 <Link onClick={subopenMenu} className={css.categoryLink}>
                     <Box display="flex" alignItems="center">
