@@ -108,14 +108,6 @@ const addUser = async () => {
       const response = await axios.post("http://localhost:5000/users", newUser);
       if (response.status === 201) {
         login(response.data)
-        navigate("/")
-        mySwal.fire({
-          title: response.data.name +'خوش آمدید ',
-          text: "وارد حساب کاربری شدید",
-          icon: 'success',
-          timer: 3000,
-          confirmButtonText: 'باشه',
-        });
       }
       } catch (error) {
         console.error("Error adding user:", error);
@@ -128,6 +120,7 @@ const addUser = async () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     let currentErrors = []; 
+    setUniqueErrors([])
   
     if (formData.name <= 0) {
       currentErrors.push("فیلد نام و نام خانوادگی نمی تواند خالی باشد!!!");
@@ -192,7 +185,7 @@ const addUser = async () => {
 
         {errors.length > 0 && (
                 errors.map((name, index) => (
-                  <Alert severity="error">
+                  <Alert key={index}  severity="error">
                       {name}
                  </Alert>
                 ))
@@ -200,7 +193,7 @@ const addUser = async () => {
  
         {uniqueErrors.length > 0 && (
                 uniqueErrors.map((name, index) => (
-                  <Alert severity="error">
+                  <Alert key={index} severity="error">
                       {name}
                  </Alert>
                 ))

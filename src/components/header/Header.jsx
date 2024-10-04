@@ -72,10 +72,12 @@ export default function Header(props) {
             </Box>
 
             <Box width={{xs:"60%",sm:"73%",md:"30%"}} height="100%"  display="flex" justifyContent="left" alignItems="center"> 
-                <Link>
+                <Link to={user ? "/cart" : "/auth/login"}>
                     <Box className={css.header__btn} m={{xs:"0 10px 0 0",md:"0 20px 0 0"}} width={{xs:"40px",md:"50px"}} height={{xs:"40px",md:"50px"}} position="relative" color="rgb(108 106 106)" borderRadius="10px" fontSize={{xs:"20px",md:"25px"}} bgcolor="#f8f9fa"  display="flex" justifyContent="center" alignItems="center">
                          <ci.CiShoppingBasket />
-                         <Box position="absolute" width="20px" height="20px" top="-10px" right="0" fontSize="15px" display="flex" alignItems="center" justifyContent="center" bgcolor="#00c85d" color="white" borderRadius="100px">3</Box>
+                         {user && (
+                            <Box position="absolute" width="20px" height="20px" top="-10px" right="0" fontSize="15px" display="flex" alignItems="center" justifyContent="center" bgcolor="#00c85d" color="white" borderRadius="100px">3</Box>
+                         )}
                     </Box>
                 </Link>
                 <Link>

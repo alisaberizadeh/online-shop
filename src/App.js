@@ -2,7 +2,9 @@ import { Route, Routes } from "react-router-dom";
 import Register from "./pages/register/Register";
 import Home from "./pages/home/Home";
 import AuthProvider from "./providers/AuthProvider";
-import ProtectedRoute from "./providers/ProtectedRoute ";
+import GuestCheck from "./providers/GuestCheck";
+import AdminCheck from "./providers/AdminCheck";
+import Login from "./pages/login/Login";
 
 function App() {
   return (
@@ -11,14 +13,13 @@ function App() {
         <Routes>
           
           <Route path="/" element={<Home />} />
+          <Route path="/auth/register" element={ <GuestCheck> <Register /> </GuestCheck> } />
+          <Route path="/auth/login" element={ <GuestCheck> <Login /> </GuestCheck> } />
 
-            <Route path="/auth/register"
-              element={
-                <ProtectedRoute>
-                  <Register />
-                </ProtectedRoute>
-              }
-            />
+
+          {/* dashboard routes */}
+          <Route path="/dashboard" element={<AdminCheck><Home /></AdminCheck>} />
+
 
         </Routes>
       </div>
