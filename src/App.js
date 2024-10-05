@@ -5,6 +5,7 @@ import AuthProvider from "./providers/AuthProvider";
 import GuestCheck from "./providers/GuestCheck";
 import AdminCheck from "./providers/AdminCheck";
 import Login from "./pages/login/Login";
+import Dashboard from "./pages/dashboard/Dashboard";
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
 
 
           {/* dashboard routes */}
-          <Route path="/dashboard" element={<AdminCheck><Home /></AdminCheck>} />
+          <Route path="/dashboard" element={<AdminCheck><Dashboard /></AdminCheck>} />
 
 
         </Routes>
