@@ -1,0 +1,9 @@
+.newBtn{
+    padding: 3px 20px;
+    border-radius: 100px;
+    background: var(--baseColor2);
+    color: white;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+}

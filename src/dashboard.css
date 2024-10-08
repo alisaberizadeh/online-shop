@@ -1,0 +1,52 @@
+th,td,tr{
+    text-align: right !important;
+  }
+  th{
+    font-weight: bold !important;
+    color: #5300c6 !important;
+    padding: 10px 20px !important;
+  }
+  td{
+    padding: 15px 20px !important;
+
+  }
+  thead{
+    background-color: #8833ff3b;
+  }
+  tr{
+    padding: 10px !important;
+
+  }
+  .deleteBtn{
+    background-color: rgba(255, 0, 0, 0.264);
+    color: rgb(129, 0, 0);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 20px;
+    margin-left: 10px;
+  }
+  .editBtn{
+    background-color: rgba(9, 255, 0, 0.264);
+    color: rgb(7, 103, 0);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    padding: 10px;
+    margin-left: 10px;
+    font-size: 20px;
+  }
+  .seeBtn{
+    background-color: rgba(0, 42, 255, 0.264);
+    color: rgb(0, 10, 103);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    padding: 10px;
+    margin-left: 10px;
+    font-size: 20px;
+  }

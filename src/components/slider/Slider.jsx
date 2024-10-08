@@ -22,6 +22,7 @@ import { Link } from "react-router-dom";
 export default function Slider(props) {
 
   const isMobile = useMediaQuery("(max-width:900px)");
+  
 
   const getImage = (desktopImage, mobileImage) => {
     return isMobile ? mobileImage : desktopImage;

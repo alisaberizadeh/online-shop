@@ -4,8 +4,8 @@ import Navbar from "./navbar/Navbar";
 export default function Dashboard() {
   return (
     <>
-        <Navbar />
-
+        <Navbar active="home" />
+        <h1>Home</h1>
     </>
   );
 }

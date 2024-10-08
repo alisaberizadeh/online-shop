@@ -18,5 +18,52 @@
       "date": "2024-10-04",
       "type": 2
     }
+  ],
+  "slider": [
+    {
+      "id": "1",
+      "image": "http://localhost:3000/static/media/3.c8a19c739a975f7eb2a9.webp",
+      "link": "/google.com"
+    },
+    {
+      "id": "2",
+      "image": "http://localhost:3000/static/media/4.6f246f88463f2d743051.gif",
+      "link": "/google.com"
+    },
+    {
+      "id": "3",
+      "image": "https://picsum.photos/id/1035/1300/307",
+      "link": "https://example.com/page3"
+    },
+    {
+      "id": "4",
+      "image": "https://picsum.photos/id/1044/1300/307",
+      "link": "https://example.com/page4"
+    },
+    {
+      "id": "5",
+      "image": "https://picsum.photos/id/1053/1300/307",
+      "link": "https://example.com/page5"
+    },
+    {
+      "id": "6",
+      "image": "https://picsum.photos/id/1066/1300/307",
+      "link": "https://example.com/page6"
+    },
+    {
+      "id": "7",
+      "image": "https://picsum.photos/id/1074/1300/307",
+      "link": "https://example.com/page7"
+    },
+    {
+      "id": "8",
+      "image": "https://picsum.photos/id/1080/1300/307",
+      "link": "https://example.com/page8"
+    },
+    {
+      "id": "9",
+      "image": "https://picsum.photos/id/1084/1300/307",
+      "link": "https://example.com/page9"
+    }
   ]
 }
