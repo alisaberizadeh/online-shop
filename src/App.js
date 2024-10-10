@@ -7,6 +7,7 @@ import AdminCheck from "./providers/AdminCheck";
 import Login from "./pages/login/Login";
 import Dashboard from "./pages/dashboard/Dashboard";
 import Slider from "./pages/dashboard/slider/Slider";
+import NewSlide from "./pages/dashboard/slider/NewSlide";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           {/* dashboard routes */}
           <Route path="/dashboard" element={<AdminCheck><Dashboard /></AdminCheck>} />
           <Route path="/dashboard/slider" element={<AdminCheck><Slider /></AdminCheck>} />
+          <Route path="/dashboard/slider/new" element={<AdminCheck><NewSlide /></AdminCheck>} />
 
 
         </Routes>

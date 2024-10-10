@@ -4,7 +4,7 @@ import { Box, Container, Typography } from "@mui/material";
 import * as iconMui from "@mui/icons-material";
 import { Link } from "react-router-dom";
 import * as ci from "react-icons/ci";
-import userPic from "../../../assets/images/user.jpg"
+import userPic from "../../../../assets/images/user.jpg"
 
 export default function Navbar({active}) {
   return (

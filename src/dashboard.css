@@ -50,3 +50,45 @@ th,td,tr{
     margin-left: 10px;
     font-size: 20px;
   }
+  .form{
+    width: 95%;
+    margin: 10px auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .input label{
+    width: 100%;
+    color: var(--textColor);
+  }
+  .input input{
+    width: 95%;
+    height: 40px;
+    margin-top: 10px ;
+    background-color: white;
+    color: var(--baseColor2);
+    border-radius: 10px;
+    outline: none;
+    padding: 0 2.5%;
+    border: 1px solid rgb(228, 228, 228);
+  }
+  .input input:focus{
+    border: 1px solid var(--baseColor2);
+  }
+  .input button{
+    padding: 5px 20px;
+    margin-top: 20px ;
+    background-color: rgba(9, 255, 0, 0.264);
+    color: rgb(7, 103, 0);
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .input button:hover{
+    background-color: rgba(9, 255, 0, 0.385);
+  }

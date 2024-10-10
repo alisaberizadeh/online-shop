@@ -1,5 +1,5 @@
-import { Box, CircularProgress, Container } from "@mui/material";
-import Navbar from "../navbar/Navbar";
+import { Box, Container } from "@mui/material";
+import Navbar from "../components/navbar/Navbar";
 import css from "./slider.module.css";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -15,6 +15,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import withReactContent from "sweetalert2-react-content";
 import Swal from "sweetalert2";
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
 
 export default function Slider() {
   const [loader, setLoader] = useState(true);
@@ -73,29 +75,42 @@ export default function Slider() {
           borderRadius="10px"
           boxShadow="0 2px 6px 0 rgb(218 218 253 / 65%), 0 2px 6px 0 rgb(206 206 238 / 54%)"
         >
-          {loader ? (
-            <Box width="100%" textAlign="center">
-              <CircularProgress color="secondary" />
-            </Box>
-          ) : (
-            <>
-              <TitleSection
-                title="لیست اسلاید ها"
-                link="/dashboard/slider/new/"
-                btn="اسلاید جدید"
-              />
-              <TableContainer>
-                <Table>
-                  <TableHead>
-                    <TableRow>
-                      <TableCell>ردیف</TableCell>
-                      <TableCell>تصویر</TableCell>
-                      <TableCell>لینک</TableCell>
-                      <TableCell>عملیات</TableCell>
-                    </TableRow>
-                  </TableHead>
-                  <TableBody>
-                    {sliders.map((slider, index) => (
+          <TitleSection
+            title="لیست اسلاید ها"
+            link="/dashboard/slider/new/"
+            btn="اسلاید جدید"
+            icon="Add"
+          />
+
+          <TableContainer>
+            <Table>
+              <TableHead>
+                <TableRow>
+                  <TableCell>ردیف</TableCell>
+                  <TableCell>تصویر</TableCell>
+                  <TableCell>لینک</TableCell>
+                  <TableCell>عملیات</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {loader
+                  ? [1, 2, 3, 4, 5].map((index) => (
+                      <TableRow key={index}>
+                        <TableCell>
+                          <Skeleton width={50} height={30}  />
+                        </TableCell>
+                        <TableCell>
+                          <Skeleton width={200} height={30} />
+                        </TableCell>
+                        <TableCell>
+                          <Skeleton width={100} height={30} />
+                        </TableCell>
+                        <TableCell>
+                          <Skeleton width={150} height={30}  />
+                        </TableCell>
+                      </TableRow>
+                    ))
+                  : sliders.map((slider, index) => (
                       <TableRow key={slider.id}>
                         <TableCell>{index + 1}</TableCell>
                         <TableCell>
@@ -126,11 +141,9 @@ export default function Slider() {
                         </TableCell>
                       </TableRow>
                     ))}
-                  </TableBody>
-                </Table>
-              </TableContainer>
-            </>
-          )}
+              </TableBody>
+            </Table>
+          </TableContainer>
         </Box>
       </Container>
     </>
