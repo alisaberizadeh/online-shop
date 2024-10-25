@@ -6,6 +6,7 @@ import withReactContent from 'sweetalert2-react-content';
 export const AuthProviderContext = createContext()
 
 export default function AuthProvider({children}) {
+    
     const mySwal = withReactContent(Swal);
 
     const [user, setUser] = useState(() => {

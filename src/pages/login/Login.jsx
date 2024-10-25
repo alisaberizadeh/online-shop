@@ -7,101 +7,39 @@ import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import axios from "axios";
 import { AuthProviderContext } from "../../providers/AuthProvider";
-import Swal from "sweetalert2";
-import withReactContent from "sweetalert2-react-content";
+import { useForm } from "react-hook-form";
 
 export default function Login() {
-  const [formData, setFormData] = useState({
-    phone: "",
-    password: "",
-  });
-  const [inputError, setInputError] = useState({
-    phone: false,
-    password: false,
-  });
-  const [errors, setErrors] = useState([]);
   const { login } = useContext(AuthProviderContext);
-  const mySwal = withReactContent(Swal);
-
-  // ------- Input Form Data
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-
-    if (name === "phone" && !/^\d*$/.test(value)) return;
-    if (name === "phone") {
-      const isValid = isValidPhoneNumber(value);
-      setInputError((prevError) => ({
-        ...prevError,
-        phone: !isValid,
-      }));
-    }
-
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-
-  // ------- Check Mobile
-  const isValidPhoneNumber = (phone) => {
-    const validPrefixes = ["091", "092", "093"];
-    const isNumeric = /^\d+$/.test(phone);
-    return (
-      phone.length === 11 &&
-      validPrefixes.some((prefix) => phone.startsWith(prefix)) &&
-      isNumeric
-    );
-  };
-
-  const LoginUser = async () => {
+  const form = useForm({mode:"onSubmit"});
+  const {register,handleSubmit , formState:{errors}} = form ;
+  const [loginError,setLoginErrors] = useState([])
+ 
+  const onSubmit = async (data) => {
     try {
-      let user = await axios.get( `http://localhost:5000/users?mobile=${formData.phone}` );
+      let user = await axios.get( `http://localhost:5000/users?mobile=${data.mobile}` );
       user = user.data;
       if (user.length > 0) {
         user = user[0]        
-        if (user.password === formData.password) {
+        if (user.password === data.password) {
             login(user)
         }
         else{
-            setErrors(["اطلاعات وارد شده صحیح نیست. لطفاً مجدداً تلاش کنید."]);
+          setLoginErrors(["اطلاعات وارد شده صحیح نیست. لطفاً مجدداً تلاش کنید."]);
         }
       } 
       else {
-        setErrors(["اطلاعات وارد شده صحیح نیست. لطفاً مجدداً تلاش کنید."]);
+        setLoginErrors(["اطلاعات وارد شده صحیح نیست. لطفاً مجدداً تلاش کنید."]);
       }
     } 
     catch (error) {
         console.log(error);
         
     }
+     
   };
 
-  // ------- Checked Data
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    let currentErrors = [];
-
-    if (!isValidPhoneNumber(formData.phone)) {
-      currentErrors.push("شماره همراه وارد شده معتبر نمی باشد !!!");
-      setInputError((prevError) => ({ ...prevError, phone: true }));
-    } else {
-      setInputError((prevError) => ({ ...prevError, phone: false }));
-    }
-
-    if (formData.password <= 0) {
-      currentErrors.push("کلمه عبور را وارد کنید  !!!");
-      setInputError((prevError) => ({ ...prevError, password: true }));
-    } else {
-      setInputError((prevError) => ({ ...prevError, password: false }));
-    }
-
-    setErrors(currentErrors);
-
-    if (currentErrors.length === 0) {
-      LoginUser();
-    }
-  };
-
+ 
   return (
     <>
       <Header />
@@ -124,82 +62,100 @@ export default function Login() {
         >
           ورود
         </Typography>
+ 
+        {Object.values(errors).map((error, index) => (
+          <Alert key={index} severity="error">
+            {error.message}
+          </Alert>
+        ))}
 
-        {errors.length > 0 &&
-          errors.map((name, index) => <Alert key={index} severity="error">{name}</Alert>)}
+        {loginError.map((error, index) => (
+          <Alert key={index} severity="error">
+            {error}
+          </Alert>
+        ))}
+
 
         {/* فرم ورود */}
 
-        <Box
-          className={css.input}
-          width="100%"
-          height="35px"
-          m="20px 0 0"
-          borderRadius="50px"
-          border="1px solid #80808026"
-          display="flex"
-          bgcolor="white"
-          alignItems="center"
-          justifyContent="space-between"
-          sx={{
-            border: inputError.phone ? "1px solid red" : "1px solid #80808026",
-          }}
-        >
-          <Box
-            width="15%"
-            color="#9d9d9dde"
-            height="100%"
+       <form noValidate onSubmit={handleSubmit(onSubmit)}>
+       <Box
+            className={css.input}
+            width="100%"
+            height="35px"
+            m="20px 0 0"
+            borderRadius="50px"
+            border="1px solid #80808026"
             display="flex"
+            bgcolor="white"
             alignItems="center"
-            justifyContent="center"
+            justifyContent="space-between"
+            borderColor={errors.mobile?.message ? "red" : "#80808026"}
           >
-            <IconMui.CallOutlined />
+            <Box
+              width="15%"
+              color="#9d9d9dde"
+              height="100%"
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+            >
+              <IconMui.CallOutlined />
+            </Box>
+            <input
+              type="tel"
+              name="mobile"
+              maxLength="11"
+              {...register("mobile", {
+                required: "شماره همراه را وارد کنید",
+                pattern: {
+                  value: /^(09[1-3])[0-9]{8}$/,
+                  message: "شماره همراه معتبر نمی باشد",
+                }
+              })}
+              placeholder="شماره همراه"
+            />
           </Box>
-          <input
-            type="text"
-            name="phone"
-            value={formData.phone}
-            onChange={handleChange}
-            maxLength="11"
-            placeholder="شماره همراه"
-          />
-        </Box>
 
-        <Box
-          className={css.input}
-          width="100%"
-          height="35px"
-          m="20px 0 0"
-          borderRadius="50px"
-          border="1px solid #80808026"
-          display="flex"
-          bgcolor="white"
-          alignItems="center"
-          justifyContent="space-between"
-          sx={{
-            border: inputError.password
-              ? "1px solid red"
-              : "1px solid #80808026",
-          }}
-        >
+       
           <Box
-            width="15%"
-            color="#9d9d9dde"
-            height="100%"
+            className={css.input}
+            width="100%"
+            height="35px"
+            m="20px 0 0"
+            borderRadius="50px"
+            border="1px solid #80808026"
             display="flex"
+            bgcolor="white"
             alignItems="center"
-            justifyContent="center"
+            justifyContent="space-between"
+            borderColor={errors.password?.message ? "red" : "#80808026"}
           >
-            <IconMui.LockOutlined />
+            <Box
+              width="15%"
+              color="#9d9d9dde"
+              height="100%"
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+            >
+              <IconMui.LockOutlined />
+            </Box>
+            <input
+              type="password"
+              name="password"
+              {...register("password", {
+                required: " کلمه عبور را وارد کنید",
+                pattern: {
+                  value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/,
+                  message:
+                    "کلمه عبور باید حداقل 8 کاراکتر، شامل حروف بزرگ، حروف کوچک و عدد باشد",
+                },
+              })}
+              placeholder="کلمه عبور"
+            />
           </Box>
-          <input
-            type="password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-            placeholder="کلمه عبور"
-          />
-        </Box>
+
 
         <Box
           className={css.input}
@@ -216,6 +172,7 @@ export default function Login() {
           </button>
         </Box>
 
+       </form>
         <Typography
           variant="p"
           component="p"
