@@ -49,7 +49,7 @@ export default function Header(props) {
   return (
     <>
     <Box width="100%"  height="auto" bgcolor="white">
-       <Container>
+       <Container maxWidth="xl">
 
         <Box width="100%" p={{xs:"0",md:"10px 0"}}  height="100px" display="flex" justifyContent="space-between">
 

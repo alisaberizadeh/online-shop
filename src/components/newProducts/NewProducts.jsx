@@ -12,7 +12,7 @@ import { Autoplay } from 'swiper/modules';
 export default function NewProducts(props) {
   return(
     <Box width="100%" display="flex" justifyContent="space-between"> 
-        <Box width="100%"  >
+        <Box width="100%" >
             <Typography component="p" display="flex" alignItems="center" className={css.title} variant="p" fontSize="25px" m="0 0 25px">محصولات جدید</Typography>
             <Swiper
              autoplay={{

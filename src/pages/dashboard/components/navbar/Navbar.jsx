@@ -11,7 +11,7 @@ export default function Navbar({active}) {
 
     <>
         <Box width="100%" bgcolor="white" p="5px 0" borderBottom="1px solid rgb(227 227 227 / 43%)">
-            <Container sx={{display:"flex",alignItems:"center"}}>
+            <Container maxWidth="xl" sx={{display:"flex",alignItems:"center"}}>
                 <Box width="20%" display="flex" alignItems="center">
                     <img width="20%" src="https://filenter.ir/Syn/demo/horizontal/assets/images/logo-icon.png" alt="" />
                     <Typography component="p" variant="p" fontSize="22px" color="#8833ff" m="0 10px 0 0" fontWeight="bold">داشبورد مدیریت</Typography>

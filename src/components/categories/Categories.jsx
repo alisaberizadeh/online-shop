@@ -17,8 +17,8 @@ export default function Categories(props) {
       display="flex"
       p="30px 0"
       flexWrap="wrap"
-      justifyContent="space-around"
       bgcolor="white"
+      justifyContent="space-around"
       borderRadius="20px"
       m={{ xs: "20px 0 ", md: "30px 0" }}
       boxShadow="0px 5px 12px 0px #0000000d"

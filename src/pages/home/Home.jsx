@@ -22,13 +22,13 @@ export default function Home() {
       
       <Slider />
 
-      <Container maxWidth="lg">
+      <Container maxWidth="xl">
          <Categories />
       </Container>
 
       <GoldenOffers />
 
-      <Container maxWidth="lg">
+      <Container maxWidth="xl">
           <Banners />
           <NewProducts />
           <Poster />

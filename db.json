@@ -21,18 +21,6 @@
   ],
   "slider": [
     {
-      "id": "1",
-      "image": "http://localhost:3000/static/media/3.c8a19c739a975f7eb2a9.webp",
-      "imageMobile": "test",
-      "link": "/google.com"
-    },
-    {
-      "id": "2",
-      "image": "http://localhost:3000/static/media/4.6f246f88463f2d743051.gif",
-      "imageMobile": "test",
-      "link": "/google.com"
-    },
-    {
       "id": "3",
       "image": "https://picsum.photos/id/1035/1300/307",
       "imageMobile": "test",
@@ -67,12 +55,6 @@
       "image": "https://picsum.photos/id/1080/1300/307",
       "imageMobile": "test",
       "link": "https://example.com/page8"
-    },
-    {
-      "id": "9",
-      "image": "https://picsum.photos/id/1084/1300/307",
-      "imageMobile": "test",
-      "link": "https://example.com/page9"
     }
   ]
 }

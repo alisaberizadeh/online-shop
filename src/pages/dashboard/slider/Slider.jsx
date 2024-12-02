@@ -66,7 +66,7 @@ export default function Slider() {
   return (
     <>
       <Navbar active="slider" />
-      <Container>
+      <Container maxWidth="xl">
         <Box
           width="100%"
           m="40px 0"

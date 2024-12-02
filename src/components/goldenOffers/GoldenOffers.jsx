@@ -16,7 +16,7 @@ export default function GoldenOffers(props) {
   return(
     <Box className={css.goldenOffers} width="100%" p={{xs:"30px 0",lg:"40px 0"}}>
     <Typography variant="p" fontSize="30px" fontWeight="bold" textAlign="center" color="white" component="p"> پیشنهاد طلایی </Typography>
-    <Container maxWidth="lg">
+    <Container maxWidth="xl">
     <Box width="100%" m="30px auto 0">
         <Swiper
          autoplay={{
@@ -42,7 +42,7 @@ export default function GoldenOffers(props) {
                   spaceBetween: 15,
                 },
                 1024: {
-                  slidesPerView: 4,
+                  slidesPerView: 5,
                   spaceBetween: 15,
                 },
               }}

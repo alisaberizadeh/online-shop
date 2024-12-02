@@ -12,14 +12,9 @@ import { DevTool } from "@hookform/devtools";
 
 export default function Register() {
   const { login } = useContext(AuthProviderContext);
+  
   const form = useForm({mode:"onSubmit"});
-  const {
-    register,
-    control,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = form;
+  const {register,control,handleSubmit,watch,formState: { errors }} = form;
   const password = watch("password");
 
   const onSubmit =async (data) => {
@@ -151,7 +146,8 @@ export default function Register() {
                     try {
                       const response = await axios.get(`http://localhost:5000/users?mobile=${value}`);
                       return (response.data.length === 0 || "شماره قبلا ثبت شده است");
-                    } catch (error) {
+                    }
+                    catch (error) {
                       console.error("Error fetching user:", error);
                       return "خطا در بررسی شماره همراه"; 
                     }

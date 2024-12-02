@@ -16,7 +16,7 @@ export default function Footer(props) {
   return (
     <>
     <Box width="100%" bgcolor="white" m="60px 0 0" p="30px 0">
-      <Container sx={{ display: {xs:"block",md:"flex"},justifyContent:"space-between"}}>
+      <Container maxWidth="xl" sx={{ display: {xs:"block",md:"flex"},justifyContent:"space-between"}}>
         <Box width={{xs:"100%",md:"55%"}} display={{xs:"blocdk",md:"flex"}}  textAlign="center" justifyContent="space-between">
           <List sx={{width:{xs:"100%",md:"auto"}}}>
             <ListItem className={css.title} sx={{fontWeight:"bold",color:"#00c85d"}}>دسترسی سریع</ListItem>

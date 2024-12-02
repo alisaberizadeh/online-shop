@@ -167,7 +167,7 @@ export default function Login() {
           alignItems="center"
           justifyContent="space-between"
         >
-          <button type="submit" onClick={handleSubmit}>
+          <button type="submit">
             ورود به حساب
           </button>
         </Box>
