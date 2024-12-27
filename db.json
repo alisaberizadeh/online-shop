@@ -19,42 +19,166 @@
       "type": 2
     }
   ],
-  "slider": [
+  "sliders": [
     {
-      "id": "3",
-      "image": "https://picsum.photos/id/1035/1300/307",
-      "imageMobile": "test",
+      "alt": "slide 1",
+      "src": "assets/images/slider/1.webp",
+      "srcMobile": "assets/images/slider/1mobile.png",
       "link": "https://example.com/page3"
     },
     {
-      "id": "4",
-      "image": "https://picsum.photos/id/1044/1300/307",
-      "imageMobile": "test",
-      "link": "https://example.com/page4"
+      "alt": "slide 2",
+      "src": "assets/images/slider/2.webp",
+      "srcMobile": "assets/images/slider/2mobile.png",
+      "link": "https://example.com/page3"
     },
     {
-      "id": "5",
-      "image": "https://picsum.photos/id/1053/1300/307",
-      "imageMobile": "test",
-      "link": "https://example.com/page5"
+      "alt": "slide 3",
+      "src": "assets/images/slider/3.webp",
+      "srcMobile": "assets/images/slider/3mobile.png",
+      "link": "https://example.com/page3"
     },
     {
-      "id": "6",
-      "image": "https://picsum.photos/id/1066/1300/307",
-      "imageMobile": "test",
-      "link": "https://example.com/page6"
+      "alt": "slide 4",
+      "src": "assets/images/slider/4.gif",
+      "srcMobile": "assets/images/slider/4mobile.gif",
+      "link": "https://example.com/page3"
     },
     {
-      "id": "7",
-      "image": "https://picsum.photos/id/1074/1300/307",
-      "imageMobile": "test",
-      "link": "https://example.com/page7"
+      "alt": "slide 5",
+      "src": "assets/images/slider/5.webp",
+      "srcMobile": "assets/images/slider/5mobile.png",
+      "link": "https://example.com/page3"
+    }
+  ],
+  "categories":[
+    {
+      "title" : "ساعت هوشمند",
+      "src" : "assets/images/category/1.png" ,
+      "link" : "https://example.com/page3"
     },
     {
-      "id": "8",
-      "image": "https://picsum.photos/id/1080/1300/307",
-      "imageMobile": "test",
-      "link": "https://example.com/page8"
+      "title" : "محافظ صفحه‌ نمایش",
+      "src" : "assets/images/category/2.png" ,
+      "link" : "https://example.com/page3"
+    },
+    {
+      "title" : "اسپیکر و بلندگو",
+      "src" : "assets/images/category/3.png" ,
+      "link" : "https://example.com/page3"
+    },
+    {
+      "title" : "شارژر و پاوربانک",
+      "src" : "assets/images/category/4.png" ,
+      "link" : "https://example.com/page3"
+    },
+    {
+      "title" : "هدفون و هندزفری",
+      "src" : "assets/images/category/5.png" ,
+      "link" : "https://example.com/page3"
+    },
+    {
+      "title" : "گوشی موبایل",
+      "src" : "assets/images/category/6.png" ,
+      "link" : "https://example.com/page3"
+    }
+  ],
+  "products":[
+    {
+      "title" : "گوشی موبایل اپل مدل iPhone 13 ZAA" ,
+      "src" : "https://dkstatics-public.digikala.com/digikala-products/ec9a962187e1f82cc47e7a148ef99ec1c6fd024d_1727958566.jpg?x-oss-process=image/resize,m_lfit,h_800,w_800/format,webp/quality,q_90" ,
+      "price" : "68,000,000" ,
+      "finalPrice" : "59,000,000" ,
+      "discount" : "13" ,
+      "link" : "https://example.com/page3"
+    },
+    {
+      "title" : "ساعت هوشمند ورنا مدل W49 Ultra" ,
+      "src" : "https://dkstatics-public.digikala.com/digikala-products/c0842c295c19f3b88e8491777eb5314379641645_1718703653.jpg?x-oss-process=image/resize,m_lfit,h_800,w_800/format,webp/quality,q_90" ,
+      "price" : "32,000,000" ,
+      "finalPrice" : "30,000,000" ,
+      "discount" : "5" ,
+      "link" : "https://example.com/page3"
+    },
+    {
+      "title" : "اسپیکر بلوتوثی قابل حمل" ,
+      "src" : "https://dkstatics-public.digikala.com/digikala-products/1c62e7ddec59c430763a9fd13bedd0e4b5f5ae48_1707744874.jpg?x-oss-process=image/resize,m_lfit,h_800,w_800/format,webp/quality,q_90" ,
+      "price" : "3,000,000" ,
+      "finalPrice" : "2,500,000" ,
+      "discount" : "3" ,
+      "link" : "https://example.com/page3"
+    },
+    {
+      "title" : "لامپ ال ای دی 10 وات" ,
+      "src" : "https://dkstatics-public.digikala.com/digikala-products/fd001a13901ea3fe572eac4b4bdc563c6f25427b_1730031370.jpg?x-oss-process=image/resize,m_lfit,h_800,w_800/format,webp/quality,q_90" ,
+      "price" : "4,000,000" ,
+      "finalPrice" : "2,000,000" ,
+      "discount" : "76" ,
+      "link" : "https://example.com/page3"
+    },
+    {
+      "title" : "کرم ژل آبرسان ساین اسکین" ,
+      "src" : "https://dkstatics-public.digikala.com/digikala-products/ef6e03b9115f2774463df9adf9b583839213d7fa_1646904028.jpg?x-oss-process=image/resize,m_lfit,h_800,w_800/format,webp/quality,q_90" ,
+      "price" : "5,000,000" ,
+      "finalPrice" : "3,000,000" ,
+      "discount" : "13" ,
+      "link" : "https://example.com/page3"
+    },
+    {
+      "title" : "ماوس بی‌سیم مدل A2RGB" ,
+      "src" : "https://dkstatics-public.digikala.com/digikala-products/563d1d2e356a8cdcd5f365bb839dea0f468b9b26_1611153628.jpg?x-oss-process=image/resize,m_lfit,h_800,w_800/format,webp/quality,q_90" ,
+      "price" : "6,000,000" ,
+      "finalPrice" : "3,000,000" ,
+      "discount" : "50" ,
+      "link" : "https://example.com/page3"
+    },
+    {
+      "title" : "ساعت هوشمند مدل X65pro" ,
+      "src" : "https://dkstatics-public.digikala.com/digikala-products/1b3e627c79389e9f99bd355154bc317d21acc555_1734517886.jpg?x-oss-process=image/resize,m_lfit,h_800,w_800/format,webp/quality,q_90" ,
+      "price" : "33,000,000" ,
+      "finalPrice" : "28,000,000" ,
+      "discount" : "17" ,
+      "link" : "https://example.com/page3"
+    }
+  ],
+  "banners" : [
+    {
+      "src" : "assets/images/banners/1.jpg",
+      "link" :"https://example.com/page3"
+    },
+    {
+      "src" : "assets/images/banners/2.jpg",
+      "link" :"https://example.com/page3"
+    },
+    {
+      "src" : "assets/images/banners/3.jpg",
+      "link" :"https://example.com/page3"
+    },
+    {
+      "src" : "assets/images/banners/4.jpg",
+      "link" :"https://example.com/page3"
+    }
+  ],
+  "articles": [
+    {
+      "src" : "https://www.digikala.com/mag/wp-content/uploads/2024/12/galaxy-AI-COVER-284x180.jpg",
+      "title" : "چگونه هوش مصنوعی سامسونگ را فعال کنیم؟",
+      "date" : "1402/11/16"
+    },
+    {
+      "src" : "https://www.digikala.com/mag/wp-content/uploads/2024/12/09.09-284x180.jpg",
+      "title" : "بررسی گوشی پوکو C75؛ ارزان ولی کار راه‌انداز",
+      "date" : "1402/11/16"
+    },
+    {
+      "src" : "https://www.digikala.com/mag/wp-content/uploads/2024/12/best_new_romance_films-284x180.jpg",
+      "title" : "بهترین فیلم‌های عاشقانه جدید",
+      "date" : "1402/11/16"
+    },
+    {
+      "src" : "https://www.digikala.com/mag/wp-content/uploads/2024/12/playstation-30t-annivesary-resize.jpg",
+      "title" : "۳۰ سال ۳۰ بازی؛ پلی‌استیشن چگونه تعریف می‌شود؟",
+      "date" : "1402/11/16"
     }
   ]
 }

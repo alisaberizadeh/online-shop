@@ -13,7 +13,7 @@ export default function NewSlide() {
   const { register, control, handleSubmit, formState: { errors } } = form;
 
   const createSlide = (date) => {
-    console.log(date);
+    console.log(date.link);
 
   }
 

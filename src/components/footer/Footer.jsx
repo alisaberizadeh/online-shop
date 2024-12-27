@@ -5,11 +5,9 @@ import {
   Container,
   List,
   ListItem,
-  ListItemButton,
   Typography,
 } from "@mui/material";
 import { Link } from "react-router-dom";
-import * as ci from "react-icons/ci";
 import * as IconMui from "@mui/icons-material";
 
 export default function Footer(props) {

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import css from "./newProducts.module.css";
 import { Box, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
@@ -8,8 +8,24 @@ import 'swiper/css/pagination';
 import Product from "../product/Product";
 import productImage1 from "../../assets/images/products/1.jpg";
 import { Autoplay } from 'swiper/modules';
+import axios from "axios";
 
 export default function NewProducts(props) {
+  const [products, setProducts] = useState([])
+
+  useEffect(() => {
+    const axiosData = async () => {
+      try {
+        let response = await axios.get("http://localhost:5000/products")
+        setProducts(response.data)
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    axiosData()
+  }, [])
+
+
   return(
     <Box width="100%" display="flex" justifyContent="space-between"> 
         <Box width="100%" >
@@ -43,13 +59,11 @@ export default function NewProducts(props) {
                 },
               }}
             >
-                      <SwiperSlide><Product radius="20px" image={productImage1} title="گوشی موبایل هوآوی مدل Nova 3i INE-LX1M" /></SwiperSlide>
-                      <SwiperSlide><Product radius="20px" image={productImage1} title="گوشی موبایل هوآوی مدل Nova 3i INE-LX1M" /></SwiperSlide>
-                      <SwiperSlide><Product radius="20px" image={productImage1} title="گوشی موبایل هوآوی مدل Nova 3i INE-LX1M" /></SwiperSlide>
-                      <SwiperSlide><Product radius="20px" image={productImage1} title="گوشی موبایل هوآوی مدل Nova 3i INE-LX1M" /></SwiperSlide>
-                      <SwiperSlide><Product radius="20px" image={productImage1} title="گوشی موبایل هوآوی مدل Nova 3i INE-LX1M" /></SwiperSlide>
-                      <SwiperSlide><Product radius="20px" image={productImage1} title="گوشی موبایل هوآوی مدل Nova 3i INE-LX1M" /></SwiperSlide>
-                      <SwiperSlide><Product radius="20px" image={productImage1} title="گوشی موبایل هوآوی مدل Nova 3i INE-LX1M" /></SwiperSlide>
+                  
+
+                      {products.map((item,index)=>(
+                                       <SwiperSlide key={index}><Product radius="30px" price={item.price} finalPrice={item.finalPrice} discount={item.discount} link={item.link} image={item.src} title={item.title} /></SwiperSlide>
+                        ))}
 
         </Swiper>
         </Box>

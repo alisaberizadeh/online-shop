@@ -13,14 +13,14 @@ export default function Article(props) {
 
                     <Link>
                     <Box width="92%"  height={{xs:"250px",sm:"250px",md:"200px"}}  p="4%">
-                    <Box component="img" alt="test" src={img_1} width="100%" height="100%" borderRadius="20px" />
+                    <Box component="img" alt="test" src={props.src} width="100%" height="100%" borderRadius="20px" />
                     </Box>
                     </Link>
                     <Typography component="p"  variant="p" fontSize="13px" p="0 20px" lineHeight="30px">
-                    <Link style={{color:"#565656"}}>هواوی قصد دارد بزرگترین تولیدکننده گوشی هوشمند جهان شود </Link>
+                    <Link style={{color:"#565656"}}> {props.title}</Link>
                     </Typography>
                     <Typography component="p" color="#bbbbbb" variant="p" fontSize="13px" p="0 20px 20px"  textAlign="left" lineHeight="30px">
-                    18 فروردین 1398
+                    {props.date}
                     </Typography>
 
             </Box>
